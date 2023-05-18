@@ -15,6 +15,7 @@ import AllToys from './Pages/PublicRoute/AllToys.jsx';
 import Register from './Pages/PublicRoute/Register.jsx';
 import Login from './Pages/PublicRoute/Login.jsx';
 import Home from './Pages/PublicRoute/Home.jsx';
+import AuthProvider from './ContextProvider/AuthProvider.jsx';
 
 const router = createBrowserRouter([
   {
@@ -58,5 +59,7 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
+  <AuthProvider>
+    <RouterProvider router={router} />
+  </AuthProvider>
 )

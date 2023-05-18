@@ -8,6 +8,7 @@ const Navber = () => {
    const navLinkStyles = ({isActive}) => {
     return{
        color: isActive ? '#ccedee' : '#fff',
+       backgroundColor : isActive ? 'black' : 'black',
     }
   }
 
@@ -44,7 +45,7 @@ const Navber = () => {
      
       </ul>
     </div>
-    <Link to='/' className="btn btn-ghost normal-case text-3xl special-color">
+    <Link to='/' className="btn btn-ghost normal-case text-3xl special-color" title='Toys of Automotive'>
         <img src={MainLogo} className='w-[65px] hidden md:flex' alt="logo" />    
         ToTo
     </Link>
@@ -52,23 +53,23 @@ const Navber = () => {
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
     <li>
-            <NavLink style={navLinkStyles} to='/'>Home</NavLink>
+            <NavLink className='font-bold' style={navLinkStyles} to='/'>Home</NavLink>
           </li>
      
           <li>
-            <NavLink style={navLinkStyles} to='/allToys'>All Toys</NavLink>
+            <NavLink className='font-bold' style={navLinkStyles} to='/allToys'>All Toys</NavLink>
           </li>
        
           <li>
-            <NavLink style={navLinkStyles} to='/myToys'>My Toys</NavLink>
+            <NavLink className='font-bold' style={navLinkStyles} to='/myToys'>My Toys</NavLink>
           </li>
      
           <li>
-            <NavLink style={navLinkStyles} to='/addToys'>Add A Toy</NavLink>
+            <NavLink className='font-bold' style={navLinkStyles} to='/addToys'>Add A Toy</NavLink>
           </li>
     
           <li>
-            <NavLink style={navLinkStyles} to='/blogs'>Blogs</NavLink>
+            <NavLink className='font-bold' style={navLinkStyles} to='/blogs'>Blogs</NavLink>
           </li>
     </ul>
   </div>
