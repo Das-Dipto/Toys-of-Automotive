@@ -16,6 +16,7 @@ import Register from './Pages/PublicRoute/Register.jsx';
 import Login from './Pages/PublicRoute/Login.jsx';
 import Home from './Pages/PublicRoute/Home.jsx';
 import AuthProvider from './ContextProvider/AuthProvider.jsx';
+import ProtectedRoute from './Component/ProtectedRoute.jsx';
 
 const router = createBrowserRouter([
   {
@@ -36,11 +37,11 @@ const router = createBrowserRouter([
       },
       {
         path:'myToys',
-        element:<MyToys></MyToys>
+        element: <ProtectedRoute> <MyToys></MyToys> </ProtectedRoute> 
       },
       {
         path:'addToys',
-        element:<AddToys></AddToys>
+        element: <ProtectedRoute> <AddToys></AddToys> </ProtectedRoute> 
       },
       {
         path:'blogs',

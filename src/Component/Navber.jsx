@@ -91,7 +91,6 @@ const Navber = () => {
   <div className="navbar-end">
     {
             user ? <>
-             
               <img className='me-6 user-img' title={user.displayName || user.reloadUserInfo.screenName} src={user.photoURL} alt={user.displayName} /> 
               <Link to='/login' onClick={signingOut} className="btn btn-success">Logout</Link>
               </>
