@@ -8,6 +8,14 @@
     box-sizing: border-box;
 }
 
+.user-img{
+    border: 2px solid turquoise;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+
+}
+
 .banner-container{
     background-image: linear-gradient(to right, rgba(51, 59, 65, 0.771), rgba(34, 32, 32, 0)),
     url('./assets/bannerImage.jpeg');
@@ -40,3 +48,4 @@
     background-color: rgba(255, 255, 255, 0.116);
     border-radius: 5px;
 }
+
