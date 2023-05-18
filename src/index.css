@@ -49,3 +49,30 @@
     border-radius: 5px;
 }
 
+.btn-style{
+    font-weight: 800;
+    font-size: 1.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #F0F6F8;
+    box-shadow: 0 0 18px 4px rgb(231, 231, 231);
+    transition: all 0.5s;
+}
+
+.tab-btn-one{
+    border-radius: 15px 0px 0px 15px;
+}
+
+.tab-btn-three{
+    border-radius: 0px 15px 15px 0px;
+}
+
+.active{
+    background-color: #ff00c4 ;
+    color:white;
+}
+
+@media  screen and (max-width:400px) {
+    .btn-style{
+        font-size: 0.8rem;
+    }
+}
