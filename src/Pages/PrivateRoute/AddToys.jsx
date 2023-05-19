@@ -19,6 +19,7 @@ const AddToys = () => {
       // console.log(toyName, sellerName, sellerEmail, picture, subCategory, price, rating, quantity, description);
       const newToy = {toyName, sellerName, sellerEmail, picture, subCategory, price, rating, quantity, description}
 
+      if(toyName && sellerName && sellerEmail && picture && subCategory && price && rating && quantity && description){
       fetch('http://localhost:5000/addToys',{
         method:"POST",
         headers:{
@@ -29,6 +30,10 @@ const AddToys = () => {
       .then((res)=>res.json())
       .then((data)=>console.log(data))
       .catch((err)=>console.log(err.message));
+    }
+    else{
+      alert('All field must be fill up')
+    }
   }
   return (
     <div className="add-toys-container flex flex-wrap md:justify-around  ">

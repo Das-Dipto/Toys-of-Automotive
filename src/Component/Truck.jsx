@@ -39,7 +39,7 @@ const Truck = () => {
   return (
     <div className='truck'>
     {
-     trucks?.map((item)=>(
+     trucks.slice(0,2)?.map((item)=>(
        <div key={item._id} className='category-container my-8 shadow-xl bg-white w-[80%] md:w-[55%] mx-auto'>
            <div className="category-content mx-7">
            <div className="card card-side   flex flex-col md:flex-row flex:items-center my-7">
