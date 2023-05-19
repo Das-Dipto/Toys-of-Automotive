@@ -81,6 +81,14 @@
     object-fit: contain;
 }
 
+.toy-details-container img{
+    min-width: 80px;
+    width: 1000px;
+    /* max-width: 600px; */
+}
+
+
+
 @media  screen and (max-width:400px) {
     .btn-style{
         font-size: 0.8rem;

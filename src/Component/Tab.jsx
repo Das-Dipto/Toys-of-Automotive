@@ -13,7 +13,7 @@ const Tab = () => {
   return (
     <div>
       <div className="shop-category-heading mt-20 ">
-        <h1 className='font-bold text-center text-1xl md:text-5xl'>Shop by <span className='text-teal-300'>Category</span></h1>
+        <h1 className='font-bold text-center text-2xl md:text-5xl'>Shop by <span className='text-teal-300'>Category</span></h1>
       </div>
       <div className="tab-buttons flex justify-center w-[50%] mx-auto mt-10">
         <button
