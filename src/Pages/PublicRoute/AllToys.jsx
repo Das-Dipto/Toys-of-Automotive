@@ -12,7 +12,7 @@ const AllToys = () => {
   },[])
 
   return (
-    <>
+    <div className='allToys-container mb-32'>
       <h1 className='text-4xl font-semibold text-center text-teal-500 mt-10'>All Toys</h1>
       <h3 className='text-2xl font-semibold text-center my-5'>Added by the users</h3>
       <div className="overflow-x-auto mt-10">
@@ -50,7 +50,7 @@ const AllToys = () => {
            
           </table>
 </div>
-    </>
+    </div>
   )
 }
 

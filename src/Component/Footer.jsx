@@ -5,7 +5,7 @@ import { BsYoutube } from 'react-icons/bs';
 
 const Footer = () => {
   return (
-    <footer aria-label="Site Footer" className="bg-gray-900">
+    <footer aria-label="Site Footer" className="bg-gray-900 mt-24">
       <div
         className="max-w-screen-xl px-4 py-16 mx-auto space-y-8 sm:px-6 lg:space-y-16 lg:px-8"
       >
@@ -305,7 +305,7 @@ const Footer = () => {
         </div>
 
         <p className="text-xs special-color">
-          &copy; 2022. Company Name. All rights reserved.
+          &copy; 2023. Toys Of Automotive(ToTo). All rights reserved.
         </p>
       </div>
     </footer>

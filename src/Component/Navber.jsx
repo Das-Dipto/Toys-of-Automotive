@@ -45,13 +45,14 @@ const Navber = () => {
             <NavLink style={navLinkStyles} to='/allToys'>All Toys</NavLink>
           </li>
        
-          <li>
-            <NavLink style={navLinkStyles} to='/myToys'>My Toys</NavLink>
+          { user && <li>
+            <NavLink className='font-bold' style={navLinkStyles} to='/myToys'>My Toys</NavLink>
           </li>
-     
-          <li>
-            <NavLink style={navLinkStyles} to='/addToys'>Add A Toy</NavLink>
-          </li>
+          }
+      
+         {user && <li>
+            <NavLink className='font-bold' style={navLinkStyles} to='/addToys'>Add A Toy</NavLink>
+          </li> }
     
           <li>
             <NavLink style={navLinkStyles} to='/blogs'>Blogs</NavLink>
