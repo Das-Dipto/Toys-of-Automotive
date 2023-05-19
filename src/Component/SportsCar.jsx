@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react'
+import { useContext } from 'react';
+import { AuthContext } from '../ContextProvider/AuthProvider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useNavigate } from 'react-router-dom';
 
 const SportsCar = () => {
+  const {user} = useContext(AuthContext);
   const [car, setCar] = useState([]);
+  const navigate = useNavigate()
 
   useEffect(()=>{
     fetch(`http://localhost:5000/storedata`)
@@ -11,13 +18,42 @@ const SportsCar = () => {
   },[])
 
   const sportsCar = car.filter((item)=> item.subCategory == 'Sports Car')
+  const notify = () => toast.warn("You have to log in first to view details", {theme:"light",  autoClose: 2000});
+  const handleClick = (id) =>{
+     if(!user){
+      notify() 
+      setTimeout(()=>{
+        navigate('/login')
+      },2100)
+     }
+     else{
+      navigate(`/toyDetails/${id}`)
+     }
+  }
+
   return (
-    <>
-    <h1>SportsCar</h1>
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores eveniet voluptatum quod vel qui quam totam perferendis! Blanditiis dolores obcaecati voluptatem, quo reprehenderit aut voluptas sapiente? Consectetur cum deleniti consequuntur cupiditate molestiae modi numquam inventore veniam beatae, facere, dolores aspernatur.</p>
-    <h3>{car.length}</h3>
-    <h3>{sportsCar[1].toyName}</h3>
-    </>
+    <div className='sports-car'>
+     {
+      sportsCar?.map((item)=>(
+        <div key={item._id} className='category-container my-8 shadow-xl bg-white w-[80%] md:w-[55%] mx-auto'>
+            <div className="category-content mx-7">
+            <div className="card card-side   flex flex-col md:flex-row my-7">
+                <figure><img className='toy-image' src={item.picture} alt={item.toyName} /></figure>
+                <div className="card-body">
+                  <h2 className="card-title">Name: {item.toyName}</h2>
+                  <h5 className='font-semibold'>Price: ${item.price}</h5>
+                  <h5 className='font-semibold'>Rating: {item.rating}</h5>
+                  <div className="card-actions justify-start">
+                      <button onClick={()=>handleClick(item._id)} className="btn btn-outline btn-secondary">View Details</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+      ))
+     }
+     <ToastContainer/>
+    </div>
   )
 }
 

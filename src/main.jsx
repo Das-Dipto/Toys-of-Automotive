@@ -17,6 +17,7 @@ import Login from './Pages/PublicRoute/Login.jsx';
 import Home from './Pages/PublicRoute/Home.jsx';
 import AuthProvider from './ContextProvider/AuthProvider.jsx';
 import ProtectedRoute from './Component/ProtectedRoute.jsx';
+import ToyDetails from './Pages/PrivateRoute/ToyDetails.jsx';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path:'addToys',
         element: <ProtectedRoute> <AddToys></AddToys> </ProtectedRoute> 
+      },
+      {
+        path:'toyDetails/:id',
+        element: <ProtectedRoute> <ToyDetails></ToyDetails>  </ProtectedRoute> 
       },
       {
         path:'blogs',
