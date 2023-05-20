@@ -37,7 +37,7 @@ const AddToys = () => {
             'Toy has been added!',
             'success'
           )
-          event.target.reset();
+          // event.target.reset();
          
         }
         console.log(data)
