@@ -1,8 +1,10 @@
 import React from 'react'
 import error from '../../assets/error.jpg'
 import { Link } from 'react-router-dom'
+import useTitle from '../../hooks/useTitle'
 
 const Error = () => {
+  useTitle('404')
   return (
     <div className='error-container w-[100%] h-[100vh] '>
         <div className="error-content flex flex-col justify-center items-center">

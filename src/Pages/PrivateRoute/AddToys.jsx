@@ -3,10 +3,12 @@ import Lottie from 'lottie-react'
 import Anim from '../../assets/lottieAnim.json'
 // ES6 Modules or TypeScript
 import Swal from 'sweetalert2'
+import useTitle from '../../hooks/useTitle'
 
 
 const AddToys = () => {
-
+  useTitle('Add Toys');
+  
   const handleSubmit = (event) => {
       event.preventDefault();
       const toyName = event.target.toyName.value;

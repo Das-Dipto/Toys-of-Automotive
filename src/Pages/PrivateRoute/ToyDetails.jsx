@@ -1,7 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import useTitle from '../../hooks/useTitle'
 
 const ToyDetails = () => {
+    useTitle('Toy Details')
+
     const {id} = useParams()
     const [toy, setToy] = useState([]);
 

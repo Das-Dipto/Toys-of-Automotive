@@ -27,7 +27,6 @@ const Supplier = () => {
         <img src={scaniaLogo} alt='scaniaLogo' />
         <img src={threeLogo} alt='threeLogo' />
         <img src={toyotaLogo} alt='toyotaLogo' />
-  
       </div>
 
       {/* <div className="logos-slide">

@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import {useParams} from 'react-router-dom'
 import Swal from 'sweetalert2'
+import useTitle from '../../hooks/useTitle'
 
 const Update = () => {
+  useTitle('Update Data')
+
   const {id} = useParams()
   const [updataToy, setUpdateToy] = useState([]);
   // console.log(id);

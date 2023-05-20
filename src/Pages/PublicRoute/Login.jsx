@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useContext, useState } from 'react';
 import { AuthContext } from '../../ContextProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Login = () => {
   const [fieldErrorMessage, setFieldErrorMessage] = useState('');
@@ -11,6 +12,7 @@ const Login = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const from = location.state?.from?.pathname || '/myToys';
+  useTitle('Login');
 
   // if(loading){
   //   return <h1>Loading</h1>

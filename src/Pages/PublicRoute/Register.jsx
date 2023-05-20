@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom'
 import { useContext, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../../ContextProvider/AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const Register = () => {
+  useTitle('Register')
   const { loading, createUser, updateUserData} = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();

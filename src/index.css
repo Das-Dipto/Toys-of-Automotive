@@ -153,6 +153,20 @@
   }
 
 
+  .vr-container{
+    background-image: linear-gradient(to left, rgba(51, 59, 65, 0.671), rgba(34, 32, 32, 0)),
+    url('./assets/vr.jpeg');
+    width: 85%;
+    margin: 6rem auto 8rem;
+    min-height: 78vh;
+    background-position: center;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding:2rem 4rem;
+  }
+
+
 @media  screen and (max-width:400px) {
     .btn-style{
         font-size: 0.8rem;

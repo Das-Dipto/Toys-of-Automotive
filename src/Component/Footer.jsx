@@ -2,10 +2,15 @@ import React from 'react'
 import MainLogo from '../assets/MainLogo.png'
 import { Link } from 'react-router-dom'
 import { BsYoutube } from 'react-icons/bs';
+import { AiOutlineMail } from 'react-icons/ai';
+import { BiPhone } from 'react-icons/bi'
+import { FaQuestionCircle } from 'react-icons/fa'
+import { TbMessageChatbot } from 'react-icons/Tb'
+import { ImOffice } from 'react-icons/im'
 
 const Footer = () => {
   return (
-    <footer aria-label="Site Footer" className="bg-gray-900 mt-24">
+    <footer aria-label="Site Footer" className="bg-gray-900">
       <div
         className="max-w-screen-xl px-4 py-16 mx-auto space-y-8 sm:px-6 lg:space-y-16 lg:px-8"
       >
@@ -136,7 +141,7 @@ const Footer = () => {
             className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4"
           >
             <div>
-              <p className="font-medium  text-teal-300">Services</p>
+              <p className="font-medium  text-teal-300">Products</p>
 
               <nav aria-label="Footer Navigation - Services" className="mt-6">
                 <ul className="space-y-4 text-sm">
@@ -145,7 +150,7 @@ const Footer = () => {
                       href="#"
                       className=" transition hover:opacity-75 text-gray-200"
                     >
-                      1on1 Coaching
+                      Kit Cars
                     </a>
                   </li>
 
@@ -154,7 +159,7 @@ const Footer = () => {
                       href="#"
                       className=" transition hover:opacity-75 text-gray-200"
                     >
-                      Company Review
+                      Radio Control Toys
                     </a>
                   </li>
 
@@ -163,7 +168,7 @@ const Footer = () => {
                       href="#"
                       className=" transition hover:opacity-75 text-gray-200"
                     >
-                      Accounts Review
+                      Diecast Models
                     </a>
                   </li>
 
@@ -172,7 +177,7 @@ const Footer = () => {
                       href="#"
                       className=" transition hover:opacity-75 text-gray-200"
                     >
-                      HR Consulting
+                      Vintage Collections
                     </a>
                   </li>
 
@@ -181,7 +186,7 @@ const Footer = () => {
                       href="#"
                       className=" transition hover:opacity-75 text-gray-200"
                     >
-                      SEO Optimisation
+                     Custom Assembles
                     </a>
                   </li>
                 </ul>
@@ -198,7 +203,7 @@ const Footer = () => {
                       href="#"
                       className=" transition hover:opacity-75 text-gray-200"
                     >
-                      About
+                      Mission & Vision
                     </a>
                   </li>
 
@@ -207,7 +212,7 @@ const Footer = () => {
                       href="#"
                       className=" transition hover:opacity-75 text-gray-200"
                     >
-                      Meet the Team
+                      Know Our Partners
                     </a>
                   </li>
 
@@ -216,7 +221,7 @@ const Footer = () => {
                       href="#"
                       className=" transition hover:opacity-75 text-gray-200"
                     >
-                      Accounts Review
+                      Company Overview
                     </a>
                   </li>
                 </ul>
@@ -228,30 +233,49 @@ const Footer = () => {
 
               <nav aria-label="Footer Navigation - Company" className="mt-6">
                 <ul className="space-y-4 text-sm">
+
                   <li>
                     <a
                       href="#"
-                      className=" transition hover:opacity-75 text-gray-200"
+                      className=" transition hover:opacity-75 text-gray-200 flex items-center"
                     >
-                      Contact
+                     <FaQuestionCircle className='me-1' style={{fontSize:'18'}}/> FAQs
                     </a>
                   </li>
 
                   <li>
                     <a
                       href="#"
-                      className=" transition hover:opacity-75 text-gray-200"
+                      className=" transition hover:opacity-75 text-gray-200 flex items-center"
                     >
-                      FAQs
+                     <TbMessageChatbot className='me-1' style={{fontSize:'18'}}/> Chatbot
                     </a>
                   </li>
 
                   <li>
                     <a
                       href="#"
-                      className=" transition hover:opacity-75 text-gray-200"
+                      className=" transition hover:opacity-75 text-gray-200 flex items-center"
                     >
-                      Live Chat
+                     <AiOutlineMail className='me-1' style={{fontSize:'18'}}/>Toys@toto.com
+                     
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className=" transition hover:opacity-75 text-gray-200 flex items-center"
+                    >
+                     <BiPhone className='me-1' style={{fontSize:'18'}}/> 997-8825-5620
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      className=" transition hover:opacity-75 text-gray-200 flex"
+                    >
+                     <ImOffice className='me-1' style={{fontSize:'24'}}/> 723 Old San Francisco rd,
+                     Sunnyvale, CA, USA
                     </a>
                   </li>
                 </ul>
@@ -268,34 +292,15 @@ const Footer = () => {
                       href="#"
                       className=" transition hover:opacity-75 text-gray-200"
                     >
-                      Accessibility
+                      Refund Policy
                     </a>
                   </li>
-
                   <li>
                     <a
                       href="#"
                       className=" transition hover:opacity-75 text-gray-200"
                     >
                       Returns Policy
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      href="#"
-                      className=" transition hover:opacity-75 text-gray-200"
-                    >
-                      Refund Policy
-                    </a>
-                  </li>
-
-                  <li>
-                    <a
-                      href="#"
-                      className=" transition hover:opacity-75 text-gray-200"
-                    >
-                      Hiring Statistics
                     </a>
                   </li>
                 </ul>
