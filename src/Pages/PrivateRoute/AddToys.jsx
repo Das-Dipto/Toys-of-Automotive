@@ -1,6 +1,9 @@
 import React from 'react'
 import Lottie from 'lottie-react'
 import Anim from '../../assets/lottieAnim.json'
+// ES6 Modules or TypeScript
+import Swal from 'sweetalert2'
+
 
 const AddToys = () => {
 
@@ -27,7 +30,18 @@ const AddToys = () => {
         body: JSON.stringify(newToy)
       })
       .then((res)=>res.json())
-      .then((data)=>console.log(data))
+      .then((data)=>{
+        if(data.insertedId) {
+          Swal.fire(
+            'Well Done!',
+            'Toy has been added!',
+            'success'
+          )
+          event.target.reset();
+         
+        }
+        console.log(data)
+      })
       .catch((err)=>console.log(err.message));
    
   }

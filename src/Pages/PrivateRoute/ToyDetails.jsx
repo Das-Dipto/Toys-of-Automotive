@@ -15,7 +15,8 @@ const ToyDetails = () => {
     const singleToy = toy?.find((item)=> item._id == id);
     return (
       <>
-        { toy && <div className='toy-details-container flex flex-col md:flex-row items-center mt-20 w-[90%] mx-auto'>
+        <h1 className='text-5xl font-bold text-center mt-16 underline'>TOY DETAILS</h1>
+        { toy && <div className='toy-details-container flex flex-col md:flex-row items-center mt-8 w-[90%] mx-auto'>
               <img src={singleToy?.picture} alt={singleToy?.toyName} />
               <div className="details md:ms-16">
                   <h1 className='font-bold text-2xl md:text-3xl text-teal-400'>Toy Name: {singleToy?.toyName}</h1>

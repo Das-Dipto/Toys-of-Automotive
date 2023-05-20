@@ -31,7 +31,7 @@ const AllToys = () => {
             <tbody>
                 {
                   allToys?.map((item, index)=>(
-                    <tr key={item._id}>
+                    <tr className='hover' key={item._id}>
                       <td>{index + 1}</td>
                       <td>{item.sellerName}</td>
                       <td>{item.toyName}</td>
@@ -40,7 +40,7 @@ const AllToys = () => {
                       <td>{item.quantity}</td>
                       <td>
                           <Link to={`/toyDetails/${item._id}`}>
-                          <button className="btn btn-primary">View Details</button>
+                          <button className="btn btn-outline btn-primary">View Details</button>
                           </Link>
                       </td>
                     </tr>
