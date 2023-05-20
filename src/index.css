@@ -87,6 +87,11 @@
     /* max-width: 600px; */
 }
 
+.error-image{
+    width: 800px;
+    min-width: 200px;
+}
+
 
 
 @media  screen and (max-width:400px) {

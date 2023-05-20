@@ -19,11 +19,13 @@ import AuthProvider from './ContextProvider/AuthProvider.jsx';
 import ProtectedRoute from './Component/ProtectedRoute.jsx';
 import ToyDetails from './Pages/PrivateRoute/ToyDetails.jsx';
 import Update from './Pages/PrivateRoute/Update.jsx';
+import Error from './Pages/PublicRoute/Error.jsx';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement:<Error></Error>,
     children:[
       {
         path:"/",

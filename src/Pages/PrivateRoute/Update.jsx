@@ -14,7 +14,7 @@ const Update = () => {
     .catch((err)=>console.log(err.message))
   },[])
 
-  const {price, quantity, description} = updataToy;
+  const {toyName, price, quantity, description} = updataToy;
 
   const updateSubmit = (event) => {
     event.preventDefault();
@@ -58,18 +58,22 @@ const Update = () => {
 
   return (
     <>
-      <form onSubmit={updateSubmit} className="w-full max-w-lg">
-          <div className="w-full md:w-2/5 md:me-3 px-0 mb-6 md:mb-0">
-                <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-price">
-                    Price
-                </label>
-                <input defaultValue={price} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-price" type="text" name="price" placeholder="Price" required/>
-          </div>
-            <div className="w-full md:w-2/5 px-0 mb-6 md:mb-0 mt-8">
-                  <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-quantity">
-                    Quantity
-                  </label>
-                  <input defaultValue={quantity} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-quantity" type="text" name="quantity" placeholder="Quantity" required/>
+    <h1 className='font-bold text-2xl md:text-5xl text-center mt-12'>Toy Name: <span className='text-teal-300'>{toyName}</span> </h1>
+    <div className="update-container my-24 flex flex-col items-center">
+      <form onSubmit={updateSubmit} className="w-full max-w-lg ">
+            <div className="flex flex-wrap mx-0 mb-6"> 
+                <div className="w-full md:w-2/5 md:me-3 px-0 mb-6 md:mb-0">
+                      <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-price">
+                          Price
+                      </label>
+                      <input defaultValue={price} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-price" type="text" name="price" placeholder="Price" required/>
+                </div>
+                  <div className="w-full md:w-2/5 px-0 mb-6 md:mb-0">
+                        <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-quantity">
+                          Quantity
+                        </label>
+                        <input defaultValue={quantity} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-quantity" type="text" name="quantity" placeholder="Quantity" required/>
+                  </div>
             </div>
                   
               <div className="w-full px-0 mb-6 md:mb-0 mt-8">
@@ -79,9 +83,11 @@ const Update = () => {
                     <textarea defaultValue={description} id="grid-description" className=' w-full md:w-3/4 textarea textarea-bordered bg-gray-200' name="description" placeholder="Description"  rows='3' required></textarea>
             </div>
 
-              <button type='submit' className="mt-8 w-full md:w-auto text-center btn btn-outline btn-primary">Update</button>
+              <button type='submit' className="mt-8 w-full text-center btn btn-outline btn-primary">Update</button>
                   
-          </form>
+      </form>
+
+    </div>
     </>
   )
 }
