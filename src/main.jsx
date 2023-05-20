@@ -18,6 +18,7 @@ import Home from './Pages/PublicRoute/Home.jsx';
 import AuthProvider from './ContextProvider/AuthProvider.jsx';
 import ProtectedRoute from './Component/ProtectedRoute.jsx';
 import ToyDetails from './Pages/PrivateRoute/ToyDetails.jsx';
+import Update from './Pages/PrivateRoute/Update.jsx';
 
 const router = createBrowserRouter([
   {
@@ -47,6 +48,10 @@ const router = createBrowserRouter([
       {
         path:'toyDetails/:id',
         element: <ProtectedRoute> <ToyDetails></ToyDetails>  </ProtectedRoute> 
+      },
+      {
+        path:'update/:id',
+        element: <ProtectedRoute> <Update></Update>  </ProtectedRoute> 
       },
       {
         path:'blogs',

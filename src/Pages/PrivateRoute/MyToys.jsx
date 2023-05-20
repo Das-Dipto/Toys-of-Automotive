@@ -52,14 +52,6 @@ const MyToys = () => {
     })
   }
   
-
-
-
-
-
-
-
-
   return (
     <div className='myToys-container mb-32'>
       <h1 className='text-5xl text-center font-bold text-teal-300 mt-8'>My Added Toys</h1>
@@ -92,7 +84,7 @@ const MyToys = () => {
                         <td>{item.subCategory}</td>
                         <td>{item.quantity}</td>
                         <td>
-                          <Link to={`/toyDetails/${item._id}`}>
+                          <Link to={`/update/${item._id}`}>
                               <button title='UPDATE' className="btn btn-outline btn-info my-6">Update</button>
                           </Link> <br/>
                           <button onClick={()=> handleDelete(item._id)} title='DELETE' className="btn btn-square btn-outline btn-error">
