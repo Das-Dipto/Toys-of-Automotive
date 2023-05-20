@@ -54,10 +54,33 @@ const MyToys = () => {
       }
     })
   }
+
+  const handleFilter = (event) => {
+    event.preventDefault();
+    const sortOrder = event.target.priceFilter.value;
+
+    fetch(`http://localhost:5000/price/${sortOrder}?sellerEmail=${user.email}`)
+    .then((res)=>res.json())
+    .then((data)=> {
+      console.log(data);
+      setMyToys(data)
+    })
+    .catch((err)=> console.log(err.message));
+  }
   
   return (
     <div className='myToys-container mb-32'>
       <h1 className='text-5xl text-center font-bold text-teal-300 mt-8'>My Added Toys</h1>
+
+      <form onSubmit={handleFilter} className='my-10 flex justify-center'>
+          <select name='priceFilter' className="select select-warning w-full max-w-xs">
+            <option disabled selected>Filter by Price</option>
+            <option value='descending '>Highest to Lowest</option>
+            <option value='ascending'>Lowest to Highest</option>
+          </select>
+          <button type='submit' className='btn btn-primary'>Filter</button>
+      </form>
+
       <div className="overflow-x-auto mt-12">
         <table className="table table-compact w-full">
           <thead>
