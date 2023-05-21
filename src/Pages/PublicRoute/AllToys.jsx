@@ -10,7 +10,7 @@ const AllToys = () => {
   const [allToys, setAllToys] = useState([]);
 
   useEffect(()=>{
-    fetch('http://localhost:5000/requiredToyData')
+    fetch('https://server-a11.vercel.app/requiredToyData')
     .then((res)=> res.json())
     .then((data)=> setAllToys(data))
     .catch((err)=>console.log(err.message))
@@ -23,7 +23,7 @@ const AllToys = () => {
     const toyName = event.target.search.value;
     // console.log(toyName);
 
-    fetch(`http://localhost:5000/searchToy/${toyName}`)
+    fetch(`https://server-a11.vercel.app/searchToy/${toyName}`)
     .then((res)=> res.json())
     .then((data)=> setAllToys(data))
     .catch((err)=> {

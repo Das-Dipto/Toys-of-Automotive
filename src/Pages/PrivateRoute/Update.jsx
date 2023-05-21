@@ -11,7 +11,7 @@ const Update = () => {
   // console.log(id);
 
   useEffect(()=>{
-    fetch(`http://localhost:5000/singleToy/${id}`)
+    fetch(`https://server-a11.vercel.app/singleToy/${id}`)
     .then((res)=>res.json())
     .then((data)=> setUpdateToy(data))
     .catch((err)=>console.log(err.message))
@@ -37,7 +37,7 @@ const Update = () => {
     }).then((result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/updateToy/${id}`,{
+        fetch(`https://server-a11.vercel.app/updateToy/${id}`,{
           method:'PUT',
           headers:{
             'content-type' : 'application/json'

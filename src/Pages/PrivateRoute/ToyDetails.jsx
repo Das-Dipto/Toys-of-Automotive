@@ -9,7 +9,7 @@ const ToyDetails = () => {
     const [toy, setToy] = useState([]);
 
     useEffect(()=>{
-        fetch(`http://localhost:5000/storedata`)
+        fetch(`https://server-a11.vercel.app/storedata`)
         .then((res)=>res.json())
         .then((data)=> setToy(data))
         .catch((err)=>console.log(err.message))
@@ -19,7 +19,7 @@ const ToyDetails = () => {
     return (
       <>
         <h1 className='text-2xl md:text-5xl font-bold text-center mt-16 underline'>TOY DETAILS</h1>
-        { toy && <div className='toy-details-container flex flex-col md:flex-row items-center mt-8 w-[90%] mx-auto'>
+        { toy && <div className='toy-details-container flex flex-col md:flex-row items-center mt-8 mb-14 w-[90%] mx-auto'>
               <img src={singleToy?.picture} alt={singleToy?.toyName} />
               <div className="details md:ms-16">
                   <h1 className='font-bold text-2xl md:text-3xl text-teal-400'>Toy Name: {singleToy?.toyName}</h1>

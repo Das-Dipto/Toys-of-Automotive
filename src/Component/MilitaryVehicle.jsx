@@ -12,7 +12,7 @@ const MilitaryVehicle = () => {
   const navigate = useNavigate();
 
   useEffect(()=>{
-    fetch(`http://localhost:5000/storedata`)
+    fetch(`https://server-a11.vercel.app/storedata`)
     .then((res)=>res.json())
     .then((data)=> setMilitaryVehicle(data))
     .catch((err)=>console.log(err.message))

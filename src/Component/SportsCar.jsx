@@ -11,7 +11,7 @@ const SportsCar = () => {
   const navigate = useNavigate()
 
   useEffect(()=>{
-    fetch(`http://localhost:5000/storedata`)
+    fetch(`https://server-a11.vercel.app/storedata`)
     .then((res)=>res.json())
     .then((data)=> setCar(data))
     .catch((err)=>console.log(err.message))

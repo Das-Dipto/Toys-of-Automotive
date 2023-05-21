@@ -12,7 +12,7 @@ const MyToys = () => {
   const {user} = useContext(AuthContext);
   const [myToys, setMyToys] = useState([]);
 
-  const url = `http://localhost:5000/userToy?sellerEmail=${user.email}`;
+  const url = `https://server-a11.vercel.app/userToy?sellerEmail=${user.email}`;
 
 // console.log(url);
   useEffect(()=>{
@@ -33,7 +33,7 @@ const MyToys = () => {
       confirmButtonText: 'Yes, delete it!'
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/deleteToy/${id}`,{
+        fetch(`https://server-a11.vercel.app/deleteToy/${id}`,{
           method:'DELETE'
         })
         .then((res)=>res.json())
@@ -59,7 +59,7 @@ const MyToys = () => {
     event.preventDefault();
     const sortOrder = event.target.priceFilter.value;
 
-    fetch(`http://localhost:5000/price/${sortOrder}?sellerEmail=${user.email}`)
+    fetch(`https://server-a11.vercel.app/price/${sortOrder}?sellerEmail=${user.email}`)
     .then((res)=>res.json())
     .then((data)=> {
       console.log(data);
