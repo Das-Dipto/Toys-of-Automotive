@@ -2,17 +2,29 @@ import React, { useState } from 'react';
 import SportsCar from './SportsCar';
 import Truck from './Truck'
 import MilitaryVehicle from './MilitaryVehicle';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const Tab = () => {
   const [activeTab, setActiveTab] = useState(0);
+  useEffect(() => {
+    AOS.init({
+      duration: 800, // Animation duration
+      offset:400,
+      once: true, // Whether animation should only happen once
+      easing: 'ease-in-out', // Animation easing
+      // You can add more configuration options here...
+    });
+  }, []);
 
   const handleTabClick = (tabIndex) => {
     setActiveTab(tabIndex);
   };
 
   return (
-    <div>
-      <div className="shop-category-heading mt-20 ">
+    <div data-aos="fade-left">
+      <div className="shop-category-heading mt-20"  >
         <h1 className='font-bold text-center text-2xl md:text-5xl'>Shop by <span className='text-teal-300'>Category</span></h1>
       </div>
       <div className="tab-buttons flex justify-center w-[50%] mx-auto mt-10">
