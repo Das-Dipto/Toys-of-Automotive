@@ -13,7 +13,6 @@
     border-radius: 50%;
     height: 40px;
     width: 40px;
-
 }
 
 .banner-container{
@@ -174,9 +173,26 @@
     outline: none;
   }
 
+  
+
 
 @media  screen and (max-width:400px) {
     .btn-style{
         font-size: 0.8rem;
     }
+}
+
+
+@media  screen and (max-width:340px) {
+  .user-img{
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+  }
+}
+
+@media  screen and (max-width:300px) {
+  .user-img{
+    display: none;
+  }
 }

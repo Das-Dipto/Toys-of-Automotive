@@ -24,14 +24,13 @@ const Footer = () => {
             </div>
 
             <p className="max-w-xs mt-4 text-gray-400">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Esse non
-              cupiditate quae nam molestias.
+                Rev up your passion for cars and ignite your collection with our top-tier toys! Explore our online store for car enthusiasts and collectors to fuel your joyride.
             </p>
 
             <ul className="flex gap-6 mt-8">
               <li>
                 <a
-                  href="/"
+                  href="https://www.facebook.com/"
                   rel="noreferrer"
                   target="_blank"
                   className=" transition hover:opacity-75 text-gray-200"
@@ -55,7 +54,7 @@ const Footer = () => {
 
               <li>
                 <a
-                  href="/"
+                  href="https://www.instagram.com/"
                   rel="noreferrer"
                   target="_blank"
                   className="transition hover:opacity-75 text-gray-200"
@@ -79,7 +78,7 @@ const Footer = () => {
 
               <li>
                 <a
-                  href="/"
+                  href="https://twitter.com/"
                   rel="noreferrer"
                   target="_blank"
                   className=" transition hover:opacity-75 text-gray-200"
@@ -101,7 +100,7 @@ const Footer = () => {
 
               <li>
                 <a
-                  href="/"
+                  href="https://www.youtube.com/"
                   rel="noreferrer"
                   target="_blank"
                   className="transition hover:opacity-75 text-gray-200"
@@ -113,7 +112,7 @@ const Footer = () => {
 
               <li>
                 <a
-                  href="/"
+                  href="https://dribbble.com/"
                   rel="noreferrer"
                   target="_blank"
                   className="transition hover:opacity-75 text-gray-200"

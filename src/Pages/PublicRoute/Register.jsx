@@ -21,7 +21,7 @@ const Register = () => {
   const handleRegisterSubmit = (event) =>{
       event.preventDefault();
       const name = event.target.name.value;
-      const email = event.target.email.value;
+      const email = event.target.email.value.toLowerCase();
       const password = event.target.password.value;
       const photoURL = event.target.photo.value;
   

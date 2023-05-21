@@ -10,11 +10,10 @@ const Tab = () => {
   const [activeTab, setActiveTab] = useState(0);
   useEffect(() => {
     AOS.init({
-      duration: 800, // Animation duration
+      duration: 800, 
       offset:400,
-      once: true, // Whether animation should only happen once
-      easing: 'ease-in-out', // Animation easing
-      // You can add more configuration options here...
+      once: true, 
+      easing: 'ease-in-out',
     });
   }, []);
 

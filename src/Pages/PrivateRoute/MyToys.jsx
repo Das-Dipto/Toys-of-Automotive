@@ -2,6 +2,8 @@ import React from 'react'
 import { useEffect, useContext, useState } from 'react'
 import { AuthContext } from '../../ContextProvider/AuthProvider'
 import { Link } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Swal from 'sweetalert2'
 import useTitle from '../../hooks/useTitle'
 
@@ -41,7 +43,7 @@ const MyToys = () => {
           if(data.deletedCount > 0){
             Swal.fire(
               'Deleted!',
-              'Your file has been deleted.',
+              'Your Toy has been deleted.',
               'success'
             )
 
@@ -55,6 +57,8 @@ const MyToys = () => {
     })
   }
 
+  const notify = (order) => toast.success(`${order} sort`);
+
   const handleFilter = (event) => {
     event.preventDefault();
     const sortOrder = event.target.priceFilter.value;
@@ -62,8 +66,9 @@ const MyToys = () => {
     fetch(`https://server-a11.vercel.app/price/${sortOrder}?sellerEmail=${user.email}`)
     .then((res)=>res.json())
     .then((data)=> {
-      console.log(data);
+      // console.log(data);
       setMyToys(data)
+      notify(sortOrder);
     })
     .catch((err)=> console.log(err.message));
   }
@@ -125,6 +130,7 @@ const MyToys = () => {
         
         </table>
           </div>
+          <ToastContainer/>
     </div>
   )
 }

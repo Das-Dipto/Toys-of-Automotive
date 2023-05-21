@@ -40,7 +40,7 @@ const SportsCar = () => {
             <div className="card card-side   flex flex-col md:flex-row my-7">
                 <figure><img className='toy-image' src={item.picture} alt={item.toyName} /></figure>
                 <div className="card-body">
-                  <h2 className="card-title">Name: {item.toyName}</h2>
+                  <h2 className="card-title font-bold">Name: {item.toyName}</h2>
                   <h5 className='font-semibold'>Price: ${item.price}</h5>
                   <h5 className='font-semibold'>Rating: {item.rating}</h5>
                   <div className="card-actions justify-start">

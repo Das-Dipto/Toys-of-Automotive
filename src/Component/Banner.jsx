@@ -8,10 +8,9 @@ const Banner = () => {
 
   useEffect(() => {
     AOS.init({
-      duration: 1200, // Animation duration
-      once: true, // Whether animation should only happen once
-      easing: 'ease-in-out', // Animation easing
-      // You can add more configuration options here...
+      duration: 1200, 
+      once: true, 
+      easing: 'ease-in-out',
     });
   }, []);
 

@@ -13,7 +13,7 @@ const AddToys = () => {
       event.preventDefault();
       const toyName = event.target.toyName.value;
       const sellerName = event.target.sellerName.value;
-      const sellerEmail = event.target.email.value;
+      const sellerEmail = event.target.email.value.toLowerCase();
       const picture = event.target.picture.value;
       const subCategory = event.target.subCategory.value;
       const price = event.target.price.value;
