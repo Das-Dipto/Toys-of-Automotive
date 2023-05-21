@@ -1,13 +1,16 @@
 import React from 'react'
 import Lottie from 'lottie-react'
 import Anim from '../../assets/lottieAnim.json'
-// ES6 Modules or TypeScript
 import Swal from 'sweetalert2'
 import useTitle from '../../hooks/useTitle'
+import { useContext } from 'react'
+import {AuthContext} from '../../ContextProvider/AuthProvider'
 
 
 const AddToys = () => {
   useTitle('Add Toys');
+
+  const {user} = useContext(AuthContext);
   
   const handleSubmit = (event) => {
       event.preventDefault();
@@ -42,7 +45,7 @@ const AddToys = () => {
           // event.target.reset();
          
         }
-        console.log(data)
+        // console.log(data)
       })
       .catch((err)=>console.log(err.message));
    
@@ -61,14 +64,14 @@ const AddToys = () => {
                   <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-toy-name">
                     Toy Name
                   </label>
-                  <input className="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-toy-name" name="toyName" type="text" placeholder="Toy name" required/>
+                  <input  className="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-toy-name" name="toyName" type="text" placeholder="Toy name" required/>
                   <p className="text-red-500 text-xs italic"></p>
                 </div>
                 <div className="w-full md:w-2/5 px-0">
                   <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-seller-name">
                     Seller Name
                   </label>
-                  <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-seller-name" name="sellerName" type="text" placeholder="Seller name" required/>
+                  <input defaultValue={user.displayName || user.reloadUserInfo.screenName} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-seller-name" name="sellerName" type="text" placeholder="Seller name" required/>
                 </div>
               </div>
               <div className="flex flex-wrap mx-0 mb-6">
@@ -76,7 +79,7 @@ const AddToys = () => {
                   <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-seller-email">
                     Email
                   </label>
-                  <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-seller-email" type="email" name='email' placeholder="Seller Email" required/>
+                  <input defaultValue={user.email} className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-seller-email" type="email" name='email' placeholder="Seller Email" required/>
                 </div>
                 <div className="w-full md:w-2/5 me-3 px-0 mb-6 md:mb-0">
                   <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" htmlFor="grid-picture">

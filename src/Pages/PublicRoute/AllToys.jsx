@@ -16,7 +16,8 @@ const AllToys = () => {
     .catch((err)=>console.log(err.message))
   },[])
 
-  const notify = (toy) => toast.error(`Apology! ${toy} not found`, {theme:'colored'} );
+  const notifySuccess = (toy) => toast.success(`${toy} Item found`, {theme:'colored'})
+  const notifyError = (toy) => toast.error(`Apology! ${toy} not found`, {theme:'colored'} );
 
   const handleSearch = (event) => {
     event.preventDefault();
@@ -25,10 +26,13 @@ const AllToys = () => {
 
     fetch(`https://server-a11.vercel.app/searchToy/${toyName}`)
     .then((res)=> res.json())
-    .then((data)=> setAllToys(data))
+    .then((data)=> {
+      setAllToys(data)
+      notifySuccess(data.length)
+    })
     .catch((err)=> {
       console.log(err.message);
-      notify(toyName);
+      notifyError(toyName);
     } )
   }
 

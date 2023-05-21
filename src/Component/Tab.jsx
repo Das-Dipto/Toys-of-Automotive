@@ -22,7 +22,7 @@ const Tab = () => {
   };
 
   return (
-    <div data-aos="fade-left">
+    <div data-aos="fade-zoom">
       <div className="shop-category-heading mt-20"  >
         <h1 className='font-bold text-center text-2xl md:text-5xl'>Shop by <span className='text-teal-300'>Category</span></h1>
       </div>

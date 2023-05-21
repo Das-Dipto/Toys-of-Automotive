@@ -26,7 +26,7 @@ const Register = () => {
       const photoURL = event.target.photo.value;
   
       if(password.length < 6){
-          setPasswordError("Password cannot be less than 6 character")
+          setPasswordError("Password cannot be less than six characters")
           return;
       }
 
@@ -81,7 +81,7 @@ const Register = () => {
             Password
           </label>
           <input className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="password" name='password' type="password" placeholder="Password" required/>
-          <p className="text-red-500 text-xs italic">{passwordError}</p>
+          <p className="text-red-500 text-1xl font-semibold italic">{passwordError}</p>
         </div>
         <div className="mb-6">
           <label className="block special-color text-sm font-bold mb-2" htmlFor="password">

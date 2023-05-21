@@ -34,7 +34,7 @@ const Login = () => {
 // function for signing with Email and Password
 const handleLogin = (event) =>{
   event.preventDefault();
-  const email = event.target.email.value;
+  const email = event.target.email.value.toLowerCase();
   const password = event.target.password.value;
 
   if(email,password){

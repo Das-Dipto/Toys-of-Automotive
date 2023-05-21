@@ -50,7 +50,7 @@ const MyToys = () => {
             const remainingToys = myToys?.filter(item=> item._id !== id);
             setMyToys(remainingToys)
           }
-          console.log(data);
+          // console.log(data);
         })
         .catch((err)=>console.log(err.message))
       }
@@ -77,13 +77,13 @@ const MyToys = () => {
     <div className='myToys-container mb-32'>
       <h1 className='text-5xl text-center font-bold text-teal-300 mt-8'>My Added Toys</h1>
 
-      <form onSubmit={handleFilter} className='my-10 flex justify-center'>
-          <select name='priceFilter' className="select select-warning w-full max-w-xs">
+      <form onSubmit={handleFilter} className='my-10 flex justify-center flex-wrap'>
+          <select name='priceFilter' className="select select-warning w-full max-w-xs mt-3">
             <option disabled selected>Filter by Price</option>
             <option value='descending '>Highest to Lowest</option>
             <option value='ascending'>Lowest to Highest</option>
           </select>
-          <button type='submit' className='btn btn-primary'>Filter</button>
+          <button type='submit' className='btn btn-primary mt-3'>Filter</button>
       </form>
 
       <div className="overflow-x-auto mt-12">

@@ -3,8 +3,10 @@ import {useParams} from 'react-router-dom'
 import Swal from 'sweetalert2'
 import useTitle from '../../hooks/useTitle'
 
+
 const Update = () => {
   useTitle('Update Data')
+
 
   const {id} = useParams()
   const [updataToy, setUpdateToy] = useState([]);
@@ -24,7 +26,7 @@ const Update = () => {
     const price = event.target.price.value;
     const quantity = event.target.quantity.value;
     const description = event.target.description.value;
-    console.log(price, quantity, description)
+    // console.log(price, quantity, description)
 
     const updatedToyInfo = {price, quantity, description};
 
@@ -49,7 +51,7 @@ const Update = () => {
            if(data.modifiedCount > 0) {
             Swal.fire('Information updated successfully!')
            }
-           console.log(data);
+          //  console.log(data);
         })
       } else if (result.isDenied) {
         Swal.fire('Changes are not saved', '', 'info')
