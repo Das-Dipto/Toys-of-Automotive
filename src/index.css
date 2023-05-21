@@ -166,6 +166,14 @@
     padding:2rem 4rem;
   }
 
+  .search-box input{
+    border:2px solid rgba(23, 236, 236, 0.938) !important;
+  }
+
+  .search-box input:focus{
+    outline: none;
+  }
+
 
 @media  screen and (max-width:400px) {
     .btn-style{

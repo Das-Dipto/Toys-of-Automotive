@@ -5,7 +5,7 @@ import { useEffect } from 'react'
 const useTitle = (title) => {
 
     useEffect(()=>{
-        document.title = `${title}- ToTo`;
+        document.title = `ToTo | ${title}`;
     }, [title])
 
   return (

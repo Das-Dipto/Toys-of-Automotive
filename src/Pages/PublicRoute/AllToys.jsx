@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { FaSearch } from 'react-icons/fa';
 
 const AllToys = () => {
   useTitle('All Toys')
@@ -13,10 +16,36 @@ const AllToys = () => {
     .catch((err)=>console.log(err.message))
   },[])
 
+  const notify = (toy) => toast.error(`Apology! ${toy} not found`, {theme:'colored'} );
+
+  const handleSearch = (event) => {
+    event.preventDefault();
+    const toyName = event.target.search.value;
+    // console.log(toyName);
+
+    fetch(`http://localhost:5000/searchToy/${toyName}`)
+    .then((res)=> res.json())
+    .then((data)=> setAllToys(data))
+    .catch((err)=> {
+      console.log(err.message);
+      notify(toyName);
+    } )
+  }
+
   return (
     <div className='allToys-container mb-32'>
       <h1 className='text-4xl font-semibold text-center text-teal-500 mt-10'>All Toys</h1>
       <h3 className='text-2xl font-semibold text-center my-5'>Added by the users</h3>
+
+      <div className="flex space-x-4 my-6 w-[80%] md:w-[50%] mx-auto">
+        <form onSubmit={handleSearch} className="flex rounded-md overflow-hidden w-full search-box">
+          <input type="text" name='search' placeholder='Search by toy name' className="px-4 w-full rounded-md rounded-r-none" />
+          <button type='submit' className="bg-indigo-600 text-white px-6 text-lg font-semibold py-4 rounded-r-md">
+              <FaSearch style={{fontSize:'25'}}/>
+          </button>
+        </form>
+        {/* <button className="bg-white px-6 text-lg font-semibold py-4 rounded-md">Clear</button> */}
+      </div>
     
       <div className="overflow-x-auto mt-10">
           <table className="table table-compact w-full">
@@ -52,7 +81,8 @@ const AllToys = () => {
             </tbody>
            
           </table>
-</div>
+      </div>
+<ToastContainer />
     </div>
   )
 }
